@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:novanews/presentation/screens/on_boarding_start.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:novanews/core/presentation/screens/on_boarding_start.dart';
+import 'package:novanews/features/auth/cubit/appauth/appauth_cubit.dart';
+import 'package:novanews/features/auth/presentation/screens/splash_screen.dart';
+import 'package:novanews/features/home/cubit/product_cubit.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
-
-import 'presentation/screens/splash_screen.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -20,16 +22,22 @@ class NovaNewsApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'NovaNews',
+    return MultiBlocProvider(
+      providers: [
+        BlocProvider<AppAuthCubit>(create: (context) => AppAuthCubit()),
+        BlocProvider(create: (context) => ProductCubit()..getAllProduct()),
+      ],
+      child: MaterialApp(
+        debugShowCheckedModeBanner: false,
+        title: 'NovaNews',
 
-      initialRoute: '/',
+        initialRoute: '/',
 
-      routes: {
-        '/': (context) => const SplashScreen(),
-        '/home': (context) => const OnboardingScreen(),
-      },
+        routes: {
+          '/': (context) => const SplashScreen(),
+          '/home': (context) => const OnboardingScreen(),
+        },
+      ),
     );
   }
 }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:novanews/core/widgets/onboarding_card.dart';
-import 'package:novanews/presentation/screens/home_page.dart';
+import 'package:novanews/core/presentation/widgets/onboarding_card.dart';
+import 'package:novanews/features/home/presentations/screens/home_page.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 
 class OnboardingEnd extends StatefulWidget {

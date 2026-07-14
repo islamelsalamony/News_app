@@ -1,18 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:novanews/presentation/screens/new_details_page.dart';
+import 'package:novanews/features/auth/presentation/screens/new_details_page.dart';
+import 'package:novanews/features/home/data/model/product_model.dart';
 
 class NewsCard extends StatelessWidget {
-  final String image;
-  final String title;
-  final String category;
-  final String data;
-  const NewsCard({
-    super.key,
-    required this.image,
-    required this.title,
-    required this.category,
-    required this.data,
-  });
+  final ProductModel product;
+
+  const NewsCard({super.key, required this.product});
 
   @override
   Widget build(BuildContext context) {
@@ -37,8 +30,8 @@ class NewsCard extends StatelessWidget {
               borderRadius: const BorderRadius.vertical(
                 top: Radius.circular(20),
               ),
-              child: Image.asset(
-                image,
+              child: Image.network(
+                product.image,
                 width: double.infinity,
                 height: 200,
                 fit: BoxFit.cover,
@@ -55,7 +48,7 @@ class NewsCard extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    title,
+                    product.title,
                     style: const TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 16,
@@ -63,7 +56,7 @@ class NewsCard extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    category,
+                    product.category,
                     style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       color: Colors.black,
@@ -72,7 +65,7 @@ class NewsCard extends StatelessWidget {
                   ),
                   SizedBox(height: 8),
                   Text(
-                    data,
+                    product.details,
                     style: const TextStyle(
                       fontWeight: FontWeight.w400,
                       fontSize: 14,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:novanews/core/widgets/news_card.dart';
+import 'package:novanews/features/home/presentations/widgets/news_card.dart';
 
 class NewsDetailsPage extends StatelessWidget {
   final NewsCard news;
@@ -16,7 +16,7 @@ class NewsDetailsPage extends StatelessWidget {
             left: 0,
             right: 0,
             height: MediaQuery.of(context).size.height * 0.60,
-            child: Image.asset(news.image, fit: BoxFit.cover),
+            child: Image.network(news.product.image, fit: BoxFit.cover),
           ),
 
           Positioned(
@@ -56,12 +56,12 @@ class NewsDetailsPage extends StatelessWidget {
                   controller: scrollController,
                   children: [
                     Text(
-                      news.category.toUpperCase(),
+                      news.product.category.toUpperCase(),
                       style: const TextStyle(color: Colors.black),
                     ),
                     const SizedBox(height: 10),
                     Text(
-                      news.title,
+                      news.product.title,
                       style: const TextStyle(
                         fontSize: 24,
                         fontWeight: FontWeight.bold,
@@ -69,7 +69,7 @@ class NewsDetailsPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 20),
                     Text(
-                      news.data,
+                      news.product.details,
                       style: const TextStyle(fontSize: 16, height: 1.6),
                     ),
                   ],

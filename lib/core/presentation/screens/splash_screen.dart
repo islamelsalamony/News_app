@@ -1,8 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:novanews/core/app_images.dart';
-import 'package:novanews/presentation/screens/on_boarding_start.dart';
+import 'package:novanews/core/presentation/screens/on_boarding_start.dart';
+import 'package:novanews/core/theme/app_images.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
