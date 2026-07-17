@@ -1,13 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:novanews/core/presentation/screens/on_boarding_start.dart';
+import 'package:novanews/core/cache/cache_user_repo.dart';
 import 'package:novanews/features/auth/cubit/appauth/appauth_cubit.dart';
+import 'package:novanews/features/auth/presentation/screens/on_boarding_start.dart';
 import 'package:novanews/features/auth/presentation/screens/splash_screen.dart';
 import 'package:novanews/features/home/cubit/product_cubit.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 
 Future<void> main() async {
   WidgetsFlutterBinding.ensureInitialized();
+  await CacheUserRepo.init();
 
   await Supabase.initialize(
     url: "https://jqkgshngoruxfllixebc.supabase.co",

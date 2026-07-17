@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:novanews/core/theme/app_colors.dart';
 import 'package:novanews/core/theme/app_images.dart';
+import 'package:novanews/features/auth/presentation/screens/login_screen.dart';
 import 'package:novanews/features/home/data/model/product_model.dart';
 import 'package:novanews/features/home/presentations/widgets/news_card.dart';
 import 'package:supabase_flutter/supabase_flutter.dart'; // تأكد من استيراد هذه المكتبة
@@ -19,7 +21,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFFF9F9F9),
+      backgroundColor: AppColors.white,
       body: SafeArea(
         child: Column(
           children: [
@@ -28,7 +30,16 @@ class HomeScreen extends StatelessWidget {
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  const IconButton(icon: Icon(Icons.menu), onPressed: null),
+                  IconButton(
+                    icon: const Icon(Icons.logout),
+                    onPressed: () async {
+                      await Supabase.instance.client.auth.signOut();
+                      // ignore: use_build_context_synchronously
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(builder: (context) => LoginScreen()),
+                      );
+                    },
+                  ),
                   SizedBox(
                     height: 40,
                     width: 200,

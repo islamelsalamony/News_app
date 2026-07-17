@@ -3,7 +3,7 @@ import 'package:novanews/core/theme/app_colors.dart';
 
 class AppStyles {
   static TextStyle onBoardTitle = TextStyle(
-    fontSize: 26,
+    fontSize: 30,
     fontWeight: FontWeight.bold,
     color: AppColors.primaryText,
   );
@@ -28,20 +28,20 @@ class AppStyles {
     color: AppColors.primaryText,
   );
 
-  static TextStyle textButtonGreen = TextStyle(
+  static TextStyle textButtonBlue = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
-    color: AppColors.primaryGreen,
+    color: AppColors.primaryBlue,
   );
   static TextStyle textButtonBlack = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
     color: AppColors.primaryText,
   );
-  static TextStyle textButtonOffWhite = TextStyle(
+  static TextStyle textButtonWhite = TextStyle(
     fontSize: 24,
     fontWeight: FontWeight.bold,
-    color: AppColors.primaryoffwhite,
+    color: AppColors.white,
   );
   static TextStyle textField = TextStyle(
     fontSize: 14,
@@ -61,7 +61,7 @@ class AppStyles {
   static TextStyle textadds = TextStyle(
     fontSize: 28,
     fontWeight: FontWeight.bold,
-    color: AppColors.primaryGreen,
+    color: AppColors.primaryBlue,
   );
   static TextStyle cardStyleHead = TextStyle(
     fontSize: 20,
