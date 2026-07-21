@@ -5,6 +5,7 @@ import 'package:novanews/core/theme/app_images.dart';
 import 'package:novanews/core/theme/app_styles.dart';
 import 'package:novanews/core/widgets/custom_buttom.dart';
 import 'package:novanews/features/auth/cubit/appauth/appauth_cubit.dart';
+import 'package:novanews/features/auth/presentation/screens/reset_password.dart';
 import 'package:novanews/features/auth/presentation/screens/sign_up_screen.dart';
 import 'package:novanews/features/auth/presentation/widgets/custom_row_data.dart';
 import 'package:novanews/features/auth/presentation/widgets/custom_text_field.dart';
@@ -121,7 +122,7 @@ class LoginScreen extends StatelessWidget {
                                   text: "Password ",
 
                                   textButtom: "Forget Your Password?",
-                                  screenName: SignUpScreen(),
+                                  screenName: ResetPasswordScreen(),
                                 ),
                                 // Text("Password", style: AppStyles.description),
                                 CustomTextField(

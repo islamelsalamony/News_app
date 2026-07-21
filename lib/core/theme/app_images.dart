@@ -4,4 +4,5 @@ class AppImage {
   static const String backgroundBlue = "assets/image/background blue.jpg";
   static const String logo2 = "assets/image/logo2.png";
   static const String logo3 = "assets/image/logo3.png";
+  static const String icon = "assets/image/icon.png";
 }
